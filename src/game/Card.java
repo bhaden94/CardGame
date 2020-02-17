@@ -72,10 +72,7 @@ public class Card
    */
   public int compareTo(Card anotherCard) 
   {
-    if (suit == anotherCard.suit)
-      return num - anotherCard.num;
-
-    return suit - anotherCard.suit;
+    return num - anotherCard.num;
   }
 
   //*******************************************

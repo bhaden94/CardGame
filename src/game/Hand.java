@@ -25,8 +25,16 @@ public class Hand extends GroupOfCards
    */
   public Card playACard() 
   {
-    // random number between 0 and the current size of the players hand
-    int randomNum = ThreadLocalRandom.current().nextInt(0, this.getCurrentSize());
+//    @SuppressWarnings("resource")
+//    Scanner stdIn = new Scanner(System.in);
+//    int choice;
+    
+    //display();
+//    System.out.print("\nChoose what card you would like to play by using"
+//        + " the corresponding index numbers: ");
+//    choice = stdIn.nextInt();
+    int randomNum = ThreadLocalRandom.current().nextInt(getCurrentSize());
+//    return removeCard(choice - 1);
     return removeCard(randomNum);
   }
 

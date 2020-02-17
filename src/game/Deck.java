@@ -61,7 +61,7 @@ public class Deck extends GroupOfCards
              unshuffled--)
     {
       // pick a random card
-      int randomCard = ThreadLocalRandom.current().nextInt(0, this.getCurrentSize());
+      int randomCard = ThreadLocalRandom.current().nextInt(0, getCurrentSize());
       // this removes the random card and then adds it back to the end of the deck
       addCard(removeCard(randomCard));
     }

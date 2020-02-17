@@ -39,8 +39,13 @@ public class GroupOfCards
 
   public void display() 
   {
-    System.out.println(cards);
-  }
+    System.out.println("This is your hand:");
+    System.out.println();
+    for (int i=0; i<cards.size(); i++)
+    {
+      System.out.println((i+1) + ": " + cards.get(i));
+    }
+  }  
 
   //*******************************************
 
@@ -52,6 +57,13 @@ public class GroupOfCards
   public void addCard(Card card) 
   {
     cards.add(card);
+  }
+  
+  // add winning cards to discard pile
+  public void addCard(Card card1, Card card2) 
+  {
+    cards.add(card1);
+    cards.add(card2);
   }
 
   //*******************************************
