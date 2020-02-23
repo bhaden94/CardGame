@@ -9,6 +9,7 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 // Implements a group of cards
 public class GroupOfCards
@@ -67,15 +68,34 @@ public class GroupOfCards
   }
 
   //*******************************************
+  
   /**
    * Remove and return a card object at a specified location
    *
    * @param index  the index of the element to be removed
    * @return  the card object just removed.
    */
-  public Card removeCard(int index) 
+  public Card removeCard(int index)
   {
     return cards.remove(index);
   }
+  
+  //*******************************************
+  
+  /**
+   * Shuffle all cards currently in a group of cards
+   */
+  public void shuffle() 
+  {
+    for (int unshuffled = getCurrentSize()-1;
+             unshuffled >= 0;
+             unshuffled--)
+    {
+      // pick a random card
+      int randomCard = ThreadLocalRandom.current().nextInt(0, getCurrentSize());
+      // this removes the random card and then adds it back to the end of the deck
+      addCard(removeCard(randomCard));
+    }
+  } // end shuffle
 
 } // end class GroupOfCards

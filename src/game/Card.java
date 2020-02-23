@@ -11,7 +11,7 @@ package game;
 public class Card
 {
   //Used for display suit value such as Club instead of 0
-  private static final String[] SUIT_STR = {"Club", "Diamond", "Heart", "Spade"};
+  private static final String[] SUIT_STR = {"Clubs", "Diamonds", "Hearts", "Spades"};
   private int num;  // number value of a card: 2-14, use 11-14 for J, Q, K, A
   private int suit; // suit value of a card: 0-3 for "Club"<"Diamond"<"Heart"<"Spade"
 
@@ -50,7 +50,7 @@ public class Card
 
   /**
    * Displays a card in format of suit and num
-   * for example: Club 10
+   * for example: 10 of Clubs
    */
   public void display() 
   {
@@ -78,11 +78,25 @@ public class Card
   //*******************************************
   /**
    * Returns a string representation of
-   * a card object in format of "Club 10".
+   * a card object in format of "Ace of Clubs".
    */
   public String toString() 
   {
-    return (SUIT_STR[suit]+" "+num);
+    String currentCardStr = Integer.toString(num);
+    switch (num)
+    {
+      case 11: currentCardStr = "Jack";
+        break;
+      case 12: currentCardStr = "Queen";
+        break;
+      case 13: currentCardStr = "King";
+        break;
+      case 14: currentCardStr = "Ace";
+        break;
+      default:
+        break;
+    }
+    return (currentCardStr + " of " + SUIT_STR[suit]);
   }
 
   //*******************************************

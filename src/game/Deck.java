@@ -9,8 +9,6 @@
 
 package game;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 // Implements a deck of 52 cards
 public class Deck extends GroupOfCards
 {
@@ -51,19 +49,4 @@ public class Deck extends GroupOfCards
     return removeCard(getCurrentSize() - 1);
   }
 
-  /**
-   * Shuffle all cards currently in a deck
-   */
-  public void shuffle() 
-  {
-    for (int unshuffled = getCurrentSize()-1;
-             unshuffled >= 0;
-             unshuffled--)
-    {
-      // pick a random card
-      int randomCard = ThreadLocalRandom.current().nextInt(0, getCurrentSize());
-      // this removes the random card and then adds it back to the end of the deck
-      addCard(removeCard(randomCard));
-    }
-  } // end shuffle
 } // end class Deck
