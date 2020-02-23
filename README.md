@@ -1,9 +1,12 @@
 # CardGame
-Program to simulate a classic card game known as War.
+Program to simulate a classic card game known as War with some extra user interaction.
 
-Each game consists of two players that get dealt half of a deck of cards each and then randomly places one from there hand down.
+See the rules document for more information on the game.
 
-The player with the higher card wins that round. 
+The most recent update fix a few errors and added the user interaction. 
 
-The game continues until the players are out of cards and then the winner is announced and the user is propmpted to play another 
-game. 
+Next update will include pulling from the dicard pile if the players hand runs out of cards while in the
+itsWar method. 
+
+An error still exists that happens when itsWar is called two times in a row and the player does not have
+enought cards in their hand or the discard pile to play.
